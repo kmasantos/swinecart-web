@@ -68,11 +68,6 @@ class OrderController extends Controller
             'name' => $customer->user->name
         ];
 
-        $order['reservation'] = [
-            'customerName' => $customer->user->name,
-            'statusTime' => $item->created_at
-        ];
-
         return $order;
     }
 

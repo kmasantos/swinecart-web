@@ -232,6 +232,8 @@ class OrderController extends Controller
                     'isDeleted' => $product->trashed(),
                     'isUnique' => $product->is_unique === 1
                 ];
+                
+                $order['customer'] = ['name' => ''];
 
                 return $order;
             });
