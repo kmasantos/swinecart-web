@@ -106,9 +106,9 @@ class OrderController extends Controller
                 $orders = $account_user
                     ->swineCartItems()
                     ->with(
-                        'productReservation'
+                        'productReservation',
                         // 'product.breed',
-                        // 'product.primaryImage',
+                        'product.primaryImage',
                         // 'product.farmFrom',
                         // 'product.breeder.user',
                         // 'customer.user'
