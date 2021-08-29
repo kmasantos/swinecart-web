@@ -233,8 +233,6 @@ class OrderController extends Controller
                     'isUnique' => $product->is_unique === 1
                 ];
                 
-                $order['customer'] = ['name' => ''];
-
                 return $order;
             });
 
