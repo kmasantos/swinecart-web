@@ -60,16 +60,16 @@ class ProductController extends Controller {
     public function __construct()
     {
         $this->middleware('jwt:auth', ['except' => [
-            'getProductDetails', 'getProductMedia'
+            'getProduct', 'getProductMedia'
         ]]);
         $this->middleware('jwt.role:breeder', ['except' => [
-            'getProductDetails', 'getProductMedia'
+            'getProduct', 'getProductMedia'
         ]]);
         $this->middleware(function($request, $next) {
             $this->user = JWTAuth::user();
             return $next($request);
         }, ['except' => [
-            'getProductDetails', 'getProductMedia'
+            'getProduct', 'getProductMedia'
         ]]);
     }
     /**

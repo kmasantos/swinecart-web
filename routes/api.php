@@ -70,6 +70,7 @@ Route::group(['middleware' => 'api', 'namespace' => 'Api'], function() {
         Route::group(['prefix' => 'products'], function() {
             Route::get('/', 'ProductController@getProducts');
             Route::get('/{id}', 'ProductController@getProduct');
+            Route::get('/{id}/details', 'ProductController@getProduct');
             Route::post('/', 'ProductController@addProduct');
             Route::put('/{id}', 'ProductController@updateProduct');
             Route::delete('/{id}', 'ProductController@deleteProduct');
