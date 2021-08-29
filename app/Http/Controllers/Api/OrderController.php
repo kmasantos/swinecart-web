@@ -101,7 +101,7 @@ class OrderController extends Controller
 
         if ($status && array_key_exists($status, $this->statuses)) {
 
-            if ($status === 'requested' && false) {
+            if ($status === 'requested') {
 
                 $orders = $account_user
                     ->swineCartItems()
