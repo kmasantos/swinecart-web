@@ -21,7 +21,8 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('jwt:auth', ['except' => [
-            'login'
+            'login',
+            'logout'
         ]]);
     }
 
@@ -64,6 +65,12 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $user = JWTAuth::user();
+
+        if (!$user) {
+            return response()->json([
+                'success' => true
+            ], 200);
+        }
 
         $userLog = new UserLog;
         $userLog->user_id = $user->id;
