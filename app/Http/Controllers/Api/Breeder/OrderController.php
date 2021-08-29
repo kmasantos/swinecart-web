@@ -68,6 +68,8 @@ class OrderController extends Controller
             'name' => $customer->user->name
         ];
 
+        $order['customerName'] = 'CHECKING IF THAT WORKS';
+
         return $order;
     }
 
