@@ -101,14 +101,14 @@ class OrderController extends Controller
 
         if ($status && array_key_exists($status, $this->statuses)) {
 
-            if ($status === 'requested') {
+            if ($status === 'requested' && false) {
 
                 $orders = $account_user
                     ->swineCartItems()
                     ->with(
                         'productReservation',
                         // 'product.breed',
-                        'product.primaryImage',
+                        // 'product.primaryImage',
                         // 'product.farmFrom',
                         // 'product.breeder.user',
                         // 'customer.user'
