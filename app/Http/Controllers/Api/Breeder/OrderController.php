@@ -68,7 +68,10 @@ class OrderController extends Controller
             'name' => $customer->user->name
         ];
 
-        $order['customerName'] = 'CHECKING IF THAT WORKS';
+        $order['reservation'] = [
+            'customerName' => $customer->user->name,
+            'statusTime' => $item->created_at
+        ];
 
         return $order;
     }
