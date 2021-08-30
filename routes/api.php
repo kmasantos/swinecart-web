@@ -89,7 +89,7 @@ Route::group(['middleware' => 'api', 'namespace' => 'Api'], function() {
         });
 
         Route::group(['prefix' => 'orders'], function() {
-            Route::get('/requests/{product_id}', 'OrderController@getRequests');
+            Route::get('/{product_id}/requests', 'OrderController@getRequests');
             Route::delete('/requests/{swinecart_id}', 'OrderController@deleteRequest');
 
             Route::get('/', 'OrderController@getOrders');
