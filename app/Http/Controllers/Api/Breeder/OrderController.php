@@ -59,6 +59,7 @@ class OrderController extends Controller
             'type' => $product->type,
             'breed' => $this->transformBreedSyntax($product->breed->name),
             'imageUrl' => $this->getProductImage($product, 'small'),
+            'image' => $this->getProductImage($product, 'small'),
             'isDeleted' => $product->trashed(),
             'isUnique' => $product->is_unique === 1
         ];
@@ -164,6 +165,7 @@ class OrderController extends Controller
                             $item->breed->name
                         ),
                         'imageUrl' => $this->getProductImage($item, 'small'),
+                        'image' => $this->getProductImage($item, 'small'),
                         'isDeleted' => $item->trashed(),
                         'isUnique' => $item->is_unique === 1
                     ];
@@ -266,6 +268,7 @@ class OrderController extends Controller
                 'breed' => $this->transformBreedSyntax($breed->name),
                 'farmLocation' => $product->farmFrom->province,
                 'imageUrl' => $this->getProductImage($product, 'small'),
+                'image' => $this->getProductImage($product, 'small'),
                 'isDeleted' => $product->trashed(),
                 'isUnique' => $product->is_unique === 1
             ];
