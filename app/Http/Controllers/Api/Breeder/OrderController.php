@@ -484,6 +484,9 @@ class OrderController extends Controller
                 'province' => $customer->address_province
             ];
 
+            $request['customerName'] = $user->name;
+            $request['customerProvince'] = $user->address_province;
+
             return $request;
         });
 
