@@ -465,7 +465,7 @@ class OrderController extends Controller
             $user = $customer->user;
 
             $request['id'] = $item->id;
-            $request['quantiy'] = $item->quantity;
+            $request['quantity'] = $item->quantity;
             $request['dateNeeded'] = $product_type == 'semen'
                 ? $item->date_needed == '0000-00-00'
                     ?
@@ -486,6 +486,9 @@ class OrderController extends Controller
 
             $request['customerName'] = $user->name;
             $request['customerProvince'] = $user->address_province;
+            $request['customerId'] = $user->id;
+            $request['productId'] = $item->product->id;
+            $request['swineCartId'] = $item->id;
 
             return $request;
         });
