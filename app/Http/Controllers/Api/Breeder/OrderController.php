@@ -69,6 +69,12 @@ class OrderController extends Controller
             'name' => $customer->user->name
         ];
 
+        $order['reservation'] = [
+            'customerName' => $customer->user->name
+        ];
+
+        $order['customerName'] = $customer->user->name;
+
         return $order;
     }
 
