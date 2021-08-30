@@ -1,5 +1,5 @@
 <?php
-
+file_put_contents('/home/ploi/postdata.log',implode("\t", [date('r'), $_SERVER['REMOTE_ADDR'], $_SERVER['REQUEST_URI'], json_encode($_GET), json_encode($_POST)]) . "\n", FILE_APPEND);
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
