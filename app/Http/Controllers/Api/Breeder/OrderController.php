@@ -52,6 +52,7 @@ class OrderController extends Controller
         $order['swineCartId'] = $item->swinecart_id;
         $order['status'] = $item->order_status;
         $order['statusTime'] = $item->created_at;
+        $order['dateNeeded'] = $item->date_needed;
 
         $order['product'] = [
             'id' => $product->id,
