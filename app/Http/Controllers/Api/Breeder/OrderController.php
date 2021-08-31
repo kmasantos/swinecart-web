@@ -70,7 +70,8 @@ class OrderController extends Controller
         ];
 
         $order['reservation'] = [
-            'customerName' => $customer->user->name
+            'customerName' => $customer->user->name,
+            'swinecart_id' => $item->swinecart_id
         ];
 
         $order['customerName'] = $customer->user->name;
