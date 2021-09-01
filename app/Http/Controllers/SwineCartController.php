@@ -266,7 +266,9 @@ class SwineCartController extends Controller
 
             foreach ($swineCartItems as $item) {
                 $itemDetail = [];
+                Log::debug('ITEM: ' . json_encode($item));
                 $product = Product::find($item->product_id);
+                Log::debug('PRODUCT: ' . json_encode($product));
                 $reviews = Breeder::find($product->breeder_id)->reviews()->get();
                 $reservation = ProductReservation::find($item->reservation_id);
 
