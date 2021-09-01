@@ -661,7 +661,6 @@ class ProductController extends Controller
             // Check if the farm where the product is is still accredited
             // Exclude it from the showcase of products if farm's
             // accreditation status is not active
-            Log::debug("Looping now in $key. Product is " . json_encode($product));
             if($product->farmFrom->accreditation_status != 'active'){
                 unset($products[$key]);
                 continue;
